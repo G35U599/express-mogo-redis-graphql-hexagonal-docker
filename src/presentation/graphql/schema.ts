@@ -10,6 +10,8 @@ export const typeDefs = `#graphql
   }
 
   type Mutation {
-    createUser(name: String!, email: String!): User
+    createUser(name: String!, email: String!, password: String!): User
+    requestPasswordReset(email: String!): Boolean!
+    resetPassword(token: String!, newPassword: String!): Boolean!
   }
 `;

@@ -12,6 +12,9 @@ services:
       PORT: 4000
       MONGO_URI: mongodb://mongodb:27017/app
       REDIS_URL: redis://redis:6379
+      PASSWORD_RESET_BASE_URL: ${PASSWORD_RESET_BASE_URL:-http://localhost:3000/reset-password}
+      GMAIL_USER: ${GMAIL_USER}
+      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD}
     volumes:
       - .:/app
       - /app/node_modules

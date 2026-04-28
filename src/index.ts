@@ -1,12 +1,10 @@
-import dotenv from "dotenv";
+import "dotenv/config";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { connectDB } from "./infrastructure/db/mongoose";
 import { connectRedis } from "./infrastructure/db/redis";
 import { typeDefs } from "./presentation/graphql/schema";
 import { resolvers } from "./presentation/graphql/resolvers";
-
-dotenv.config();
 
 const startApp = async () => {
   const PORT = Number(process.env.PORT || 4000);

@@ -5,3 +5,9 @@ export class User {
     public email: string
   ) {}
 }
+
+export interface CreateUserInput {
+  name: string;
+  email: string;
+  passwordHash: string;
+}

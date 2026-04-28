@@ -1,5 +1,5 @@
-import { IUserRepository } from "../domain/repositories/IUserRepository";
-import { redisClient } from "../infrastructure/db/redis";
+import { IUserRepository } from "../../domain/repositories/IUserRepository";
+import { redisClient } from "../../infrastructure/db/redis";
 
 export class GetUserUseCase {
   constructor(private userRepository: IUserRepository) {}

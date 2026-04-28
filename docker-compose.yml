@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mi_mongodb
+    ports:
+      - "27017:27017" # Expone el puerto por defecto de Mongo
+    volumes:
+      - mongo_data:/data/db # Esto guarda los datos para que no se borren si apagas docker
+
+  redis:
+    image: redis:latest
+    container_name: mi_redis
+    ports:
+      - "6379:6379" # Expone el puerto por defecto de Redis
+
+volumes:
+  mongo_data:

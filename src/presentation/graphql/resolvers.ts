@@ -1,8 +1,8 @@
-import { MongoUserRepository } from "../../infraestructure/repositories/MongoUserRepository";
+import { MongoUserRepository } from "../../infrastructure/repositories/MongoUserRepository";
 import { CreateUserUseCase } from "../../useCases/CreateUserUseCase";
 import { GetUserUseCase } from "../../useCases/GetUserUseCase";
 
-// Instanciamos nuestras dependencias (Inyección de dependencias manual)
+// Instanciamos nuestras dependencias (inyección de dependencias manual)
 const userRepository = new MongoUserRepository();
 const createUserUseCase = new CreateUserUseCase(userRepository);
 const getUserUseCase = new GetUserUseCase(userRepository);

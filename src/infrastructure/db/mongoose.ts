@@ -1,8 +1,14 @@
 import mongoose from "mongoose";
 
+const mongoUri = process.env.MONGO_URI;
+
+if (!mongoUri) {
+  throw new Error("La variable de entorno MONGO_URI es obligatoria");
+}
+
 export const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI as string);
+    await mongoose.connect(mongoUri);
     console.log("📦 MongoDB conectado");
   } catch (error) {
     console.error("Error conectando a MongoDB", error);
